@@ -38,5 +38,24 @@ print(f"{data_dict}")
 # %%
 temperature_list: list = []
 
-finding_temperature = [row for row in data_dict[1:]]
-print(finding_temperature)
+temperature_list = [float(linha['medida_temperatura']) for linha in data_dict]
+
+print(temperature_list)
+
+# %%
+# SUM the list temperature_list and take the average
+average_tempo = sum(temperature_list) / len(temperature_list)  
+print(average_tempo)
+
+# %% find the higher temperature 
+higher_temperature: float = max(temperature_list)
+print(data_dict)
+
+# %%
+percorrendo_lista: list = []
+
+for row in data_dict:
+    if float(row['medida_temperatura']) == higher_temperature:
+        percorrendo_lista.append(row)
+
+print(percorrendo_lista)
