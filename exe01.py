@@ -26,3 +26,17 @@ type(dados_lidos)
 find_fails = [row for row in dados_lidos if "Falha" in row]
 print(find_fails)
 
+# %%
+with open(csv_file, "r", encoding="UTF-8", newline='') as file_dict:
+    csv_dict_reader = csv.DictReader(file_dict)
+    data_dict = [row for row in csv_dict_reader]
+print(f"{data_dict}")
+
+# %%
+
+
+# %%
+temperature_list: list = []
+
+finding_temperature = [row for row in data_dict[1:]]
+print(finding_temperature)
